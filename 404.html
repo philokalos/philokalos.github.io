@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나는 어떤 친구?</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif; background: #FFF9F0; color: #3D2B1F; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100svh; padding: 24px; text-align: center; }
+    .emblem { font-size: 72px; margin-bottom: 16px; }
+    h1 { font-size: 22px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; }
+    p { font-size: 15px; color: #7A6355; line-height: 1.7; margin-bottom: 28px; }
+    .btn { display: inline-block; background: #D97C4E; color: #fff; text-decoration: none; font-size: 16px; font-weight: 700; padding: 14px 32px; border-radius: 999px; }
+  </style>
+</head>
+<body>
+  <div class="emblem">✨</div>
+  <h1>친구의 오늘 스냅샷을<br>보려면 앱이 필요해요</h1>
+  <p>앱을 설치하면 친구의 스냅샷을 보고<br>나도 오늘 하루를 기록할 수 있어요.</p>
+  <a class="btn" href="https://apps.apple.com/app/id6760641378">App Store에서 받기 →</a>
+  <script>
+    // /kids-mbti/r/{code} 경로로 들어온 경우 앱이 설치돼 있으면 universal link로 재시도
+    const path = window.location.pathname;
+    if (path.startsWith('/kids-mbti/r/')) {
+      const code = path.replace('/kids-mbti/r/', '');
+      if (code) {
+        // iOS: kids-mbti:// scheme으로 열기 시도 (설치된 경우)
+        window.location.href = 'kids-mbti://r/' + code;
+      }
+    }
+  </script>
+</body>
+</html>

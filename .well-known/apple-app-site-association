@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "UTNLRZ42SP.com.philokalos.kids-mbti",
-        "paths": ["/kids-mbti/invite", "/kids-mbti/invite?*"]
+        "paths": ["/kids-mbti/invite", "/kids-mbti/invite?*", "/kids-mbti/r/*"]
       }
     ]
   }
